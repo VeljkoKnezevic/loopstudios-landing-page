@@ -120,8 +120,7 @@ h2 {
 }
 .main .creations {
   margin-block-start: 6rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
 }
 .main .creations__heading {
   margin: 0 1.5rem;
@@ -140,26 +139,66 @@ h2 {
 .main .creations #deep-earth {
   background-image: url(./images/mobile/image-deep-earth.jpg);
 }
+@media (min-width: 75em) {
+  .main .creations #deep-earth {
+    background-image: url(./images/desktop/image-deep-earth.jpg);
+  }
+}
 .main .creations #night-arcade {
   background-image: url(./images/mobile/image-night-arcade.jpg);
+}
+@media (min-width: 75em) {
+  .main .creations #night-arcade {
+    background-image: url(./images/desktop/image-night-arcade.jpg);
+  }
 }
 .main .creations #soccer-team {
   background-image: url(./images/mobile/image-soccer-team.jpg);
 }
+@media (min-width: 75em) {
+  .main .creations #soccer-team {
+    background-image: url(./images/desktop/image-soccer-team.jpg);
+  }
+}
 .main .creations #the-grid {
   background-image: url(./images/mobile/image-grid.jpg);
+}
+@media (min-width: 75em) {
+  .main .creations #the-grid {
+    background-image: url(./images/desktop/image-grid.jpg);
+  }
 }
 .main .creations #from-up-above {
   background-image: url(./images/mobile/image-from-above.jpg);
 }
+@media (min-width: 75em) {
+  .main .creations #from-up-above {
+    background-image: url(./images/desktop/image-from-above.jpg);
+  }
+}
 .main .creations #pocket-borealis {
   background-image: url(./images/mobile/image-pocket-borealis.jpg);
+}
+@media (min-width: 75em) {
+  .main .creations #pocket-borealis {
+    background-image: url(./images/desktop/image-pocket-borealis.jpg);
+  }
 }
 .main .creations #the-curiosity {
   background-image: url(./images/mobile/image-curiosity.jpg);
 }
+@media (min-width: 75em) {
+  .main .creations #the-curiosity {
+    background-image: url(./images/desktop/image-curiosity.jpg);
+  }
+}
 .main .creations #make-it-fisheye {
   background-image: url(./images/mobile/image-fisheye.jpg);
+}
+@media (min-width: 75em) {
+  .main .creations #make-it-fisheye {
+    background-image: url(./images/desktop/image-fisheye.jpg);
+  }
 }
 .main .creations__card {
   min-height: 7.5rem;
@@ -232,6 +271,104 @@ h2 {
   mix-blend-mode: normal;
   opacity: 0.5;
   margin-block-start: 1rem;
+}
+
+@media (min-width: 75em) {
+  .header,
+  .main {
+    padding: 0 10.3125rem;
+  }
+  .header {
+    padding-block-start: 4rem;
+    background-image: url(./images/desktop/image-hero.jpg);
+  }
+  .header__hamburger {
+    display: none;
+  }
+  .header__nav {
+    display: flex;
+    gap: 2rem;
+  }
+  .header__nav__item {
+    font-family: "Alata";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    color: #ffffff;
+  }
+  .header__logo {
+    width: auto;
+    height: auto;
+  }
+  .header__wrapper {
+    width: 59%;
+    margin-block-start: 8.125rem;
+  }
+  .header__wrapper__text {
+    font-size: 72px;
+    line-height: 70px;
+    padding: 40px;
+  }
+  .main .interactive {
+    display: flex;
+    align-items: flex-end;
+  }
+  .main .interactive__image {
+    width: 45.6875rem;
+    height: 31.25rem;
+    z-index: 1;
+    src: url(./images/desktop/image-interactive.jpg);
+  }
+  .main .interactive__content {
+    background-color: #ffffff;
+    min-width: 33.8125rem;
+    max-height: 317px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-inline-start: -10.0625rem;
+    z-index: 2;
+  }
+  .main .interactive__heading {
+    padding: 96px 0 0 96px;
+    font-size: 48px;
+    line-height: 48px;
+    min-width: 27.8125rem;
+    text-align: start;
+  }
+  .main .interactive__para {
+    padding-inline-start: 6rem;
+    text-align: start;
+    margin-block-start: 1.5625rem;
+    min-width: 27.8125rem;
+  }
+  .main .creations {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main .creations__cards {
+    grid-column: 1/3;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.875rem;
+    margin-block-start: 5rem;
+  }
+  .main .creations__heading {
+    margin: 0;
+    justify-self: flex-start;
+    font-size: 48px;
+    line-height: 48px;
+  }
+  .main .creations__card {
+    min-height: 28.125rem;
+  }
+  .main .creations__button {
+    order: 0;
+    margin: 0;
+    justify-self: flex-end;
+    max-height: 40px;
+    min-width: 157px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

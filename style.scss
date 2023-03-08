@@ -358,6 +358,7 @@ h2 {
     .interactive {
       display: flex;
       align-items: flex-end;
+      margin-block-start: pxToRem(160px);
 
       &__image {
         width: pxToRem(731px);

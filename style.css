@@ -39,7 +39,7 @@ h2 {
   min-height: 40.625rem;
 }
 .header h1 {
-  height: 24px;
+  height: 1.5rem;
 }
 .header__logo {
   width: 9rem;
@@ -78,8 +78,8 @@ h2 {
 }
 .header__active-item {
   font-weight: 300;
-  font-size: 24px;
-  line-height: 25px;
+  font-size: 1.5rem;
+  line-height: 1.5625rem;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -221,7 +221,7 @@ h2 {
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 0.875rem;
-  letter-spacing: 5px;
+  letter-spacing: 0.3125rem;
   text-transform: uppercase;
   color: #000000;
   background-color: white;
@@ -233,10 +233,9 @@ h2 {
 .footer {
   margin-block-start: 6rem;
   background: #000000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 56px 51px 56px 52px;
+  display: grid;
+  place-items: center;
+  padding: 3.5rem 3.1875rem 3.5rem 3.25rem;
 }
 .footer__logo {
   width: 9rem;
@@ -244,15 +243,16 @@ h2 {
 }
 .footer__items {
   margin-block-start: 2rem;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 .footer__item {
   font-family: "Alata";
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 25px;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
   color: #ffffff;
   text-align: center;
 }
@@ -265,8 +265,8 @@ h2 {
   font-family: "Alata";
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 25px;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
   color: #ffffff;
   mix-blend-mode: normal;
   opacity: 0.5;
@@ -293,9 +293,21 @@ h2 {
     font-family: "Alata";
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
     color: #ffffff;
+  }
+  .header__nav__item:hover {
+    cursor: pointer;
+    position: relative;
+  }
+  .header__nav__item:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 25%;
+    width: 1.5rem;
+    border-bottom: 2px solid #ccc;
   }
   .header__logo {
     width: auto;
@@ -306,9 +318,9 @@ h2 {
     margin-block-start: 8.125rem;
   }
   .header__wrapper__text {
-    font-size: 72px;
-    line-height: 70px;
-    padding: 40px;
+    font-size: 4.5rem;
+    line-height: 4.375rem;
+    padding: 2.5rem;
   }
   .main .interactive {
     display: flex;
@@ -323,7 +335,7 @@ h2 {
   .main .interactive__content {
     background-color: #ffffff;
     min-width: 33.8125rem;
-    max-height: 317px;
+    max-height: 19.8125rem;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -332,9 +344,9 @@ h2 {
     z-index: 2;
   }
   .main .interactive__heading {
-    padding: 96px 0 0 96px;
-    font-size: 48px;
-    line-height: 48px;
+    padding: 6rem 0 0 6rem;
+    font-size: 3rem;
+    line-height: 3rem;
     min-width: 27.8125rem;
     text-align: start;
   }
@@ -356,18 +368,95 @@ h2 {
   .main .creations__heading {
     margin: 0;
     justify-self: flex-start;
-    font-size: 48px;
-    line-height: 48px;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  .main .creations .card__wrappers:hover {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .main .creations .card__wrappers:hover:after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
   }
   .main .creations__card {
     min-height: 28.125rem;
+  }
+  .main .creations__card__text {
+    padding: 22.125rem 0 2rem 2.5rem;
+    width: 70%;
   }
   .main .creations__button {
     order: 0;
     margin: 0;
     justify-self: flex-end;
-    max-height: 40px;
-    min-width: 157px;
+    max-height: 2.5rem;
+    min-width: 9.8125rem;
+  }
+  .main .creations__button:hover {
+    cursor: pointer;
+    background: #000000;
+    color: #ffffff;
+  }
+  .footer {
+    margin-block-start: 11.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    padding: 2.75rem 10.3125rem 2.6875rem;
+    gap: 1.5rem;
+  }
+  .footer__logo {
+    justify-self: flex-start;
+    align-self: flex-end;
+  }
+  .footer__items {
+    justify-self: flex-start;
+    align-self: flex-start;
+    flex-direction: row;
+    grid-row: 2/3;
+    margin-block-start: 0;
+  }
+  .footer__item:hover {
+    cursor: pointer;
+    position: relative;
+  }
+  .footer__item:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 25%;
+    width: 1.5rem;
+    border-bottom: 2px solid #ccc;
+  }
+  .footer__socials {
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin: 0;
+  }
+  .footer__socials__wrapper:hover {
+    cursor: pointer;
+    position: relative;
+  }
+  .footer__socials__wrapper:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 1.5rem;
+    border-bottom: 2px solid #ccc;
+  }
+  .footer__copy {
+    justify-self: flex-end;
+    align-self: flex-start;
+    margin: 0;
   }
 }
 

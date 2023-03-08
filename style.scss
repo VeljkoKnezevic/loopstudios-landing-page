@@ -43,7 +43,7 @@ h2 {
   min-height: pxToRem(650px);
 
   h1 {
-    height: 24px;
+    height: pxToRem(24px);
   }
 
   &__logo {
@@ -89,8 +89,8 @@ h2 {
 
   &__active-item {
     font-weight: 300;
-    font-size: 24px;
-    line-height: 25px;
+    font-size: pxToRem(24px);
+    line-height: pxToRem(25px);
     text-transform: uppercase;
 
     color: #ffffff;
@@ -236,7 +236,7 @@ h2 {
       font-weight: 400;
       font-size: pxToRem(14px);
       line-height: pxToRem(14px);
-      letter-spacing: 5px;
+      letter-spacing: pxToRem(5px);
       text-transform: uppercase;
       color: #000000;
       background-color: white;
@@ -250,10 +250,9 @@ h2 {
 .footer {
   margin-block-start: pxToRem(96px);
   background: #000000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 56px 51px 56px 52px;
+  display: grid;
+  place-items: center;
+  padding: pxToRem(56px) pxToRem(51px) pxToRem(56px) pxToRem(52px);
 
   &__logo {
     width: pxToRem(144px);
@@ -262,7 +261,8 @@ h2 {
 
   &__items {
     margin-block-start: pxToRem(32px);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: pxToRem(16px);
   }
 
@@ -270,8 +270,8 @@ h2 {
     font-family: "Alata";
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: pxToRem(15px);
+    line-height: pxToRem(25px);
     color: #ffffff;
     text-align: center;
   }
@@ -286,8 +286,8 @@ h2 {
     font-family: "Alata";
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
-    line-height: 25px;
+    font-size: pxToRem(15px);
+    line-height: pxToRem(25px);
     color: #ffffff;
     mix-blend-mode: normal;
     opacity: 0.5;
@@ -317,9 +317,23 @@ h2 {
         font-family: "Alata";
         font-style: normal;
         font-weight: 400;
-        font-size: 15px;
-        line-height: 25px;
+        font-size: pxToRem(15px);
+        line-height: pxToRem(25px);
         color: #ffffff;
+
+        &:hover {
+          cursor: pointer;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: pxToRem(-8px);
+            left: 25%;
+            width: pxToRem(24px);
+            border-bottom: 2px solid #ccc;
+          }
+        }
       }
     }
 
@@ -333,9 +347,9 @@ h2 {
       margin-block-start: pxToRem(130px);
 
       &__text {
-        font-size: 72px;
-        line-height: 70px;
-        padding: 40px;
+        font-size: pxToRem(72px);
+        line-height: pxToRem(70px);
+        padding: pxToRem(40px);
       }
     }
   }
@@ -355,7 +369,7 @@ h2 {
       &__content {
         background-color: #ffffff;
         min-width: pxToRem(541px);
-        max-height: 317px;
+        max-height: pxToRem(317px);
         margin: 0;
         display: flex;
         flex-direction: column;
@@ -365,9 +379,9 @@ h2 {
       }
 
       &__heading {
-        padding: 96px 0 0 96px;
-        font-size: 48px;
-        line-height: 48px;
+        padding: pxToRem(96px) 0 0 pxToRem(96px);
+        font-size: pxToRem(48px);
+        line-height: pxToRem(48px);
         min-width: pxToRem(445px);
         text-align: start;
       }
@@ -393,21 +407,118 @@ h2 {
       &__heading {
         margin: 0;
         justify-self: flex-start;
-        font-size: 48px;
-        line-height: 48px;
+        font-size: pxToRem(48px);
+        line-height: pxToRem(48px);
+      }
+
+      .card__wrappers {
+        &:hover {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+
+          &:after {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.5);
+          }
+        }
       }
 
       &__card {
         min-height: pxToRem(450px);
+
+        &__text {
+          padding: pxToRem(354px) 0 pxToRem(32px) pxToRem(40px);
+          width: 70%;
+        }
       }
 
       &__button {
         order: 0;
         margin: 0;
         justify-self: flex-end;
-        max-height: 40px;
-        min-width: 157px;
+        max-height: pxToRem(40px);
+        min-width: pxToRem(157px);
+
+        &:hover {
+          cursor: pointer;
+          background: #000000;
+          color: #ffffff;
+        }
       }
+    }
+  }
+
+  .footer {
+    margin-block-start: pxToRem(184px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    padding: pxToRem(44px) pxToRem(165px) pxToRem(43px);
+    gap: pxToRem(24px);
+
+    &__logo {
+      justify-self: flex-start;
+      align-self: flex-end;
+    }
+
+    &__items {
+      justify-self: flex-start;
+      align-self: flex-start;
+
+      flex-direction: row;
+      grid-row: 2 /3;
+      margin-block-start: 0;
+    }
+
+    &__item {
+      &:hover {
+        cursor: pointer;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: pxToRem(-8px);
+          left: 25%;
+          width: pxToRem(24px);
+          border-bottom: 2px solid #ccc;
+        }
+      }
+    }
+
+    &__socials {
+      justify-self: flex-end;
+      align-self: flex-end;
+      margin: 0;
+
+      &__wrapper {
+        &:hover {
+          cursor: pointer;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: pxToRem(-8px);
+            left: 0;
+            width: pxToRem(24px);
+            border-bottom: 2px solid #ccc;
+          }
+        }
+      }
+    }
+
+    &__copy {
+      justify-self: flex-end;
+      align-self: flex-start;
+      margin: 0;
     }
   }
 }

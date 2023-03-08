@@ -397,7 +397,7 @@ h2 {
 
     .creations {
       grid-template-columns: repeat(2, 1fr);
-      margin-block-start: pxToRem(184px);
+      margin-block-start: pxToRem(185px);
 
       &__cards {
         grid-column: 1 / 3;

@@ -359,7 +359,7 @@ h2 {
   }
   .main .creations {
     grid-template-columns: repeat(2, 1fr);
-    margin-block-start: 11.5rem;
+    margin-block-start: 11.5625rem;
   }
   .main .creations__cards {
     grid-column: 1/3;
